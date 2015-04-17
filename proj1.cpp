@@ -15,7 +15,6 @@ public:
 
 private:
 
-
 };
 void Sudoku::GiveQuestion(){
 srand(time(NULL));
@@ -48,8 +47,6 @@ int m10[]={c,a,b,-1,-1,-1,g,d,0,e,0,i};
 int m11[]={g,d,h,-1,-1,-1,0,f,i,c,0,b};
 int m12[]={0,f,0,-1,-1,-1,c,a,0,g,0,h};*/
 
-int s=rand()%3;
-if(s==0){
 int m1[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
 		0,0,c,i,e,0,f,0,d,-1,-1,-1,
 		i,0,a,f,b,d,h,0,0,-1,-1,-1,
@@ -62,9 +59,7 @@ int m1[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
 		c,a,b,-1,-1,-1,g,d,0,e,0,i,
 		g,d,h,-1,-1,-1,0,f,i,c,0,b,
 		0,f,0,-1,-1,-1,c,a,0,g,0,h};
-	}
-if(s==0){
-int m1[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
+int m2[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
                 0,0,c,i,e,0,f,0,d,-1,-1,-1,
                 i,0,a,f,b,d,h,0,0,-1,-1,-1,
                 -1,-1,-1,a,c,b,0,h,g,i,e,f,
@@ -76,9 +71,7 @@ int m1[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
                 c,a,b,-1,-1,-1,g,d,0,e,0,i,
                 g,0,0,-1,-1,-1,0,f,i,c,0,b,
                 0,f,0,-1,-1,-1,c,a,0,g,0,h};
-	}
-if(s==2){
-int m1(12)(12)={d,b,f,h,g,c,i,e,a,-1,-1,-1,
+int m3[12][12]={d,b,f,h,g,c,i,e,a,-1,-1,-1,
                 0,0,c,i,e,0,f,0,d,-1,-1,-1,
                 i,0,a,f,b,d,h,0,0,-1,-1,-1,
                 -1,-1,-1,b,c,a,0,h,g,i,e,f,
@@ -90,31 +83,83 @@ int m1(12)(12)={d,b,f,h,g,c,i,e,a,-1,-1,-1,
                 c,a,b,-1,-1,-1,g,d,0,e,0,i,
                 g,d,h,-1,-1,-1,0,f,i,c,0,b,
                 0,f,0,-1,-1,-1,c,a,0,g,0,h};
-	}
-switch(rand()%3)
+  int C=rand()%3;
+
+switch(rand()%3){
+
 	case 0:
+		if(C==0){
 		for(int j=0;j<12;j++){
   		      for(int i=0;i<12;i++){
                		 cout<<m1[j][i]<<" ";
 			 }
 	        	cout<<endl;
         		}
+		}
+                if(C==1){
+                for(int j=0;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m2[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+		}
+                if(C==2){
+                for(int j=0;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m3[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+		}
 		break;
 	case 1:
+
+		if(C==0){
                 for(int j=3;j<12;j++){
                       for(int i=0;i<12;i++){
                          cout<<m1[j][i]<<" ";
                          }
                         cout<<endl;
                         }
-		for(int j=0;j<3;j++){
+                for(int j=0;j<3;j++){
                       for(int i=0;i<12;i++){
                          cout<<m1[j][i]<<" ";
                          }
                         cout<<endl;
                         }
-		break;}
+		}
+                if(C==1){
+                for(int j=3;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m2[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+                for(int j=0;j<3;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m2[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+                }
+                if(C==2){
+                for(int j=3;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m3[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+		for(int j=0;j<3;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m3[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+		}
+		break;
 	case 2:
+		if(rand()%3==0){
                 for(int j=6;j<12;j++){
                       for(int i=0;i<12;i++){
                          cout<<m1[j][i]<<" ";
@@ -127,6 +172,35 @@ switch(rand()%3)
                          }
                         cout<<endl;
                         }
+                }
+                if(rand()%3==1){
+                for(int j=6;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m2[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+                for(int j=0;j<6;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m2[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+                }
+                if(rand()%3==2){
+                for(int j=6;j<12;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m3[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+                for(int j=0;j<6;j++){
+                      for(int i=0;i<12;i++){
+                         cout<<m3[j][i]<<" ";
+                         }
+                        cout<<endl;
+                        }
+		}
 		break;
 		
 
